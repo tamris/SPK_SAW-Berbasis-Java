@@ -14,7 +14,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import ui.Login;
 
 /**
  *
@@ -38,9 +40,7 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
         
-        timer.start();
-        
-        
+        timer.start(); 
     }
     
     private void showDayDateTime(){
@@ -82,6 +82,12 @@ public class MenuUtama extends javax.swing.JFrame {
         pn_line4 = new javax.swing.JPanel();
         btn_Normalisasi = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        pn_logout = new javax.swing.JPanel();
+        pn_line5 = new javax.swing.JPanel();
+        btn_Logout = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         pn_kanan = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lb_tanggal = new javax.swing.JLabel();
@@ -439,6 +445,82 @@ public class MenuUtama extends javax.swing.JFrame {
                     .addContainerGap()))
         );
 
+        jLabel8.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel8.setText("PERHITUNGAN");
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel9.setText("AUTH");
+
+        pn_logout.setBackground(new java.awt.Color(255, 255, 255));
+        pn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pn_logoutMouseEntered(evt);
+            }
+        });
+
+        pn_line5.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout pn_line5Layout = new javax.swing.GroupLayout(pn_line5);
+        pn_line5.setLayout(pn_line5Layout);
+        pn_line5Layout.setHorizontalGroup(
+            pn_line5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        pn_line5Layout.setVerticalGroup(
+            pn_line5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        btn_Logout.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btn_Logout.setForeground(new java.awt.Color(102, 102, 102));
+        btn_Logout.setText("Logout");
+        btn_Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_LogoutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_LogoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_LogoutMouseExited(evt);
+            }
+        });
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-logout-30.png"))); // NOI18N
+
+        javax.swing.GroupLayout pn_logoutLayout = new javax.swing.GroupLayout(pn_logout);
+        pn_logout.setLayout(pn_logoutLayout);
+        pn_logoutLayout.setHorizontalGroup(
+            pn_logoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_logoutLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(pn_logoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pn_logoutLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(pn_line5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(195, Short.MAX_VALUE)))
+        );
+        pn_logoutLayout.setVerticalGroup(
+            pn_logoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_logoutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pn_logoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_Logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(pn_logoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pn_logoutLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(pn_line5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
         javax.swing.GroupLayout pn_kiriLayout = new javax.swing.GroupLayout(pn_kiri);
         pn_kiri.setLayout(pn_kiriLayout);
         pn_kiriLayout.setHorizontalGroup(
@@ -446,17 +528,21 @@ public class MenuUtama extends javax.swing.JFrame {
             .addGroup(pn_kiriLayout.createSequentialGroup()
                 .addGroup(pn_kiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn_kiriLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(pn_kiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3)
-                            .addComponent(pn_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pn_alternatif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pn_kriteria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pn_penilaian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pn_normalisasi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(pn_kiriLayout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pn_kiriLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(pn_kiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addGroup(pn_kiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3)
+                                .addComponent(pn_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pn_alternatif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pn_kriteria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pn_penilaian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pn_normalisasi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel9)
+                            .addComponent(pn_logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         pn_kiriLayout.setVerticalGroup(
@@ -475,8 +561,14 @@ public class MenuUtama extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(pn_penilaian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
                 .addComponent(pn_normalisasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(324, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(pn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         getContentPane().add(pn_kiri, java.awt.BorderLayout.LINE_START);
@@ -674,6 +766,33 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pn_normalisasiMouseEntered
 
+    private void btn_LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogoutMouseClicked
+        // TODO add your handling code here:
+        int confirm = JOptionPane.showConfirmDialog(this, "Apakah Anda yakin ingin logout?", "Konfirmasi Logout", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            // Logout berhasil, kembali ke halaman login
+            Login loginFrame = new Login();
+            loginFrame.setVisible(true);
+            this.dispose(); // Tutup MenuUtama
+        }
+    }//GEN-LAST:event_btn_LogoutMouseClicked
+
+    private void btn_LogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogoutMouseEntered
+        // TODO add your handling code here:
+        pn_logout.setBackground(new Color(250,250,250));
+        pn_line5.setBackground(new Color(0, 102, 153));
+    }//GEN-LAST:event_btn_LogoutMouseEntered
+
+    private void btn_LogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogoutMouseExited
+        // TODO add your handling code here:
+        pn_logout.setBackground(new Color(255,255,255));
+        pn_line5.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btn_LogoutMouseExited
+
+    private void pn_logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pn_logoutMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pn_logoutMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -711,17 +830,21 @@ public class MenuUtama extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btn_Dashboard;
+    private javax.swing.JLabel btn_Logout;
     private javax.swing.JLabel btn_Normalisasi;
     private javax.swing.JLabel btn_alternatif;
     private javax.swing.JLabel btn_kriteria;
     private javax.swing.JLabel btn_penilaian;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_tanggal;
     private javax.swing.JPanel pn_alternatif;
@@ -734,6 +857,8 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JPanel pn_line2;
     private javax.swing.JPanel pn_line3;
     private javax.swing.JPanel pn_line4;
+    private javax.swing.JPanel pn_line5;
+    private javax.swing.JPanel pn_logout;
     private javax.swing.JPanel pn_main;
     private javax.swing.JPanel pn_normalisasi;
     private javax.swing.JPanel pn_penilaian;

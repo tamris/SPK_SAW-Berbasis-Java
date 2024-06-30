@@ -26,7 +26,7 @@ public class Koneksi {
             m.setServerTimezone("Asia/Jakarta");
 
             Connection c = m.getConnection();
-//            System.out.println("Sukses terhubung ke database");
+            System.out.println("Sukses terhubung ke database");
             return c;
             
         } catch (SQLException e) {

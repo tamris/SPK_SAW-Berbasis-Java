@@ -44,6 +44,9 @@ public class menuPenilaian extends javax.swing.JPanel {
                 cmbAlt.addItem(nama); // Tambahkan nama ke JComboBox
                 alternatifMap.put(nama, id); // Simpan pasangan nama dan id ke dalam Map
             }
+            
+            rs.close();
+            st.close();
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat memuat data alternatif: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -86,6 +89,10 @@ public class menuPenilaian extends javax.swing.JPanel {
                 model.addRow(data);
             }
             tblPenilaian.setModel(model);
+            
+            rs.close();
+            st.close();
+            
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat memuat data penilaian: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -174,15 +181,17 @@ public class menuPenilaian extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPenilaian);
 
-        btnBatal.setBackground(new java.awt.Color(0, 102, 255));
-        btnBatal.setText("Batal");
+        btnBatal.setBackground(new java.awt.Color(153, 204, 255));
+        btnBatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-broom-24.png"))); // NOI18N
+        btnBatal.setText("Bersih");
         btnBatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBatalActionPerformed(evt);
             }
         });
 
-        btnSimpan.setBackground(new java.awt.Color(0, 204, 51));
+        btnSimpan.setBackground(new java.awt.Color(153, 255, 153));
+        btnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-save-24.png"))); // NOI18N
         btnSimpan.setText("Simpan");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,16 +228,15 @@ public class menuPenilaian extends javax.swing.JPanel {
                                 .addGap(47, 47, 47)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNilaiReferensi)
-                                    .addComponent(txtKerjasama, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)))
+                                    .addComponent(jLabel5)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(56, 56, 56)
-                                .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnSimpan)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNilaiReferensi)
+                            .addComponent(txtKerjasama, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                            .addComponent(btnBatal)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );

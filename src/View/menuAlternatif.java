@@ -135,7 +135,8 @@ public class menuAlternatif extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblData);
 
-        btnSimpan.setBackground(new java.awt.Color(0, 204, 0));
+        btnSimpan.setBackground(new java.awt.Color(153, 255, 153));
+        btnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-save-24.png"))); // NOI18N
         btnSimpan.setText("Simpan");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,15 +144,17 @@ public class menuAlternatif extends javax.swing.JPanel {
             }
         });
 
-        btnBatal.setBackground(new java.awt.Color(51, 153, 255));
-        btnBatal.setText("Batal");
+        btnBatal.setBackground(new java.awt.Color(153, 204, 255));
+        btnBatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-broom-24.png"))); // NOI18N
+        btnBatal.setText("Bersih");
         btnBatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBatalActionPerformed(evt);
             }
         });
 
-        btnHapus.setBackground(new java.awt.Color(255, 51, 51));
+        btnHapus.setBackground(new java.awt.Color(255, 153, 153));
+        btnHapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-delete-24 1.png"))); // NOI18N
         btnHapus.setText("Hapus");
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,11 +188,11 @@ public class menuAlternatif extends javax.swing.JPanel {
                             .addComponent(txtNama)
                             .addComponent(txtNIM))
                         .addGap(56, 56, 56)
-                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnBatal)
+                        .addGap(17, 17, 17)
+                        .addComponent(btnHapus)))
                 .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
